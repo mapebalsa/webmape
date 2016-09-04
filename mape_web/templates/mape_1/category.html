@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Productos</title>
+    </head>
+
+    <body>
+
+{% if producto %}
+        <h1> {{producto_name}} </h1>
+	{%if pages%}
+<ul> 
+		{% for pagina in pages %}
+			<li><a href="{{pagina.url}}"> {{pagina.title}} </a> </li> 
+		{% endfor %}
+</ul> 
+	{%else%}
+		La pagina No existe!
+	{% endif %}
+
+{%else%}
+{{category_name}} no existe.
+{% endif %}
+   </body>
+</html>
